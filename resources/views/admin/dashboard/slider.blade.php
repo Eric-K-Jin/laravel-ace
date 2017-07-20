@@ -43,7 +43,7 @@
         @foreach ($menus as $row)
             <li class="">
                 @if (!isset($row->permissions))
-                    <a data-url="{{ $row->description }}" href="#admin/{{ $row->description }}">
+                    <a data-url="admin/{{ $row->description }}" href="#admin/{{ $row->description }}">
                         <i class="menu-icon {{ $row->icon }}"></i>
                         <span class="menu-text"> {{ $row->label }} </span>
                     </a>
@@ -61,7 +61,7 @@
                     <ul class="submenu">
                         @foreach ($row->permissions as $r)
                             <li class="">
-                                <a data-url="{{ $r->description }}" href="#admin/{{ $r->description }}">
+                                <a data-url="admin/{{ $r->description }}" href="#admin/{{ $r->description }}">
                                     <i class="menu-icon fa fa-caret-right"></i>
                                     {{ $r->label }}
                                 </a>
