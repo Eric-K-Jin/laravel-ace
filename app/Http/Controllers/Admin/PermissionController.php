@@ -123,9 +123,14 @@ class PermissionController extends Controller
                     $permission->$field = '1';
                 else
                     $permission->$field = '0';
-            } else {
-                $permission->$field = $request->get($field, $this->fields[$field]);
+
+                continue;
+            } elseif ($field == 'icon')  {
+                if ($request->get('icon') == "") {
+                    continue;
+                }
             }
+            $permission->$field = $request->get($field, $this->fields[$field]);
         }
         $permission->save();
         return \Response::json(['code' => 0, 'msg' => '修改成功']);

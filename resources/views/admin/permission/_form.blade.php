@@ -19,6 +19,12 @@
             <input type="text" name="icon" id="iconpicker" data-icon="{{ $icon?$icon:'fa-sliders' }}"/>
         </div>
     </div>
+    <div class="form-group">
+        <label for="tag" class="col-md-3 control-label">权重</label>
+        <div class="col-md-1">
+            <input type="text" class="form-control" name="sort" id="sort" value="{{ $sort or '' }}" autofocus>
+        </div>
+    </div>
 @endif
 <div class="form-group">
     <label for="tag" class="col-md-3 control-label">权限概述</label>

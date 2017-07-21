@@ -22,13 +22,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $permissions = DB::table('permissions')->insert([
-            ['id' => 1, 'cid' => 0, 'name' => 'admin.index', 'label' => '主页', 'description' => 'index', 'icon' => 'fa fa-home', 'is_menu' => '0', 'sort' => 1],
+            ['id' => 1, 'cid' => 0, 'name' => 'admin.index', 'label' => '主页', 'description' => 'admin/index', 'icon' => 'fa fa-home', 'is_menu' => '0', 'sort' => 1],
             ['id' => 2, 'cid' => 1, 'name' => 'admin.index', 'label' => '首页', 'description' => '首页', 'icon' => '', 'is_menu' => '0', 'sort' => 0],
             ['id' => 3, 'cid' => 1, 'name' => 'admin.update-pwd', 'label' => '修改密码', 'description' => '修改密码', 'icon' => '', 'is_menu' => '0', 'sort' => 0],
             ['id' => 4, 'cid' => 0, 'name' => 'admin.manager.index', 'label' => '后台管理', 'description' => '后台管理', 'icon' => 'fa fa-user', 'is_menu' => '0', 'sort' => 2],
-            ['id' => 5, 'cid' => 4, 'name' => 'admin.manager.index', 'label' => '后台账户', 'description' => 'manager/index', 'icon' => '', 'is_menu' => '1', 'sort' => 0],
-            ['id' => 6, 'cid' => 4, 'name' => 'admin.role.index', 'label' => '角色管理', 'description' => 'role/index', 'icon' => '', 'is_menu' => '1', 'sort' => 0],
-            ['id' => 7, 'cid' => 4, 'name' => 'admin.permission.index', 'label' => '权限列表', 'description' => 'permission/index', 'icon' => '', 'is_menu' => '1', 'sort' => 0]
+            ['id' => 5, 'cid' => 4, 'name' => 'admin.manager.index', 'label' => '后台账户', 'description' => 'admin/manager/index', 'icon' => '', 'is_menu' => '1', 'sort' => 0],
+            ['id' => 6, 'cid' => 4, 'name' => 'admin.role.index', 'label' => '角色管理', 'description' => 'admin/role/index', 'icon' => '', 'is_menu' => '1', 'sort' => 0],
+            ['id' => 7, 'cid' => 4, 'name' => 'admin.permission.index', 'label' => '权限列表', 'description' => 'admin/permission/index', 'icon' => '', 'is_menu' => '1', 'sort' => 0]
         ]);
 
         $roles = DB::table('roles')->insert([
