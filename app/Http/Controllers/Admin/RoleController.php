@@ -86,6 +86,7 @@ class RoleController extends Controller
         if (is_array($request->get('permissions'))) {
             $role->permissions()->sync($request->get('permissions', []));
         }
+        \Cache::forget('menus');
         return \Response::json(['code' => 0, 'msg' => '新增成功']);
     }
 
@@ -122,6 +123,7 @@ class RoleController extends Controller
         $role->updated_at = Carbon::now();
         $role->save();
         $role->permissions()->sync($request->get('permissions', []));
+        \Cache::forget('menus');
         return \Response::json(['code' => 0, 'msg' => '修改成功']);
     }
 
@@ -146,6 +148,7 @@ class RoleController extends Controller
         } else {
             return \Response::json(['code' => -2, 'msg' => '删除失败']);
         }
+        \Cache::forget('menus');
         return \Response::json(['code' => 0, 'msg' => '删除失败']);
     }
 }

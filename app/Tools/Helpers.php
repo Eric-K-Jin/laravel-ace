@@ -29,7 +29,9 @@ if (!function_exists('message')) {
     }
 }
 
-function checkPermission($permission)
-{
-    return \Gate::forUser(\Auth::guard('admin')->user())->check($permission);
+if (!function_exists('checkPermission')) {
+    function checkPermission($permission)
+    {
+        return \Gate::forUser(\Auth::guard('admin')->user())->check($permission);
+    }
 }

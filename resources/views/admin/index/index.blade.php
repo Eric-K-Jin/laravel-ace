@@ -1,4 +1,4 @@
-<title>礼德财富存管系统</title>
+<title>Laravel-ace</title>
 
 <!-- ajax layout which only needs content area -->
 <div class="page-header">

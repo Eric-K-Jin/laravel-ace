@@ -97,6 +97,7 @@ class PermissionController extends Controller
             }
         }
         $permission->save();
+        \Cache::forget('menus');
         return \Response::json(['code' => 0, 'msg' => '添加成功']);
     }
 
@@ -133,6 +134,7 @@ class PermissionController extends Controller
             $permission->$field = $request->get($field, $this->fields[$field]);
         }
         $permission->save();
+        \Cache::forget('menus');
         return \Response::json(['code' => 0, 'msg' => '修改成功']);
     }
 
@@ -155,6 +157,7 @@ class PermissionController extends Controller
         } else {
             return \Response::json(['code' => -2, 'msg' => '删除失败!']);
         }
+        \Cache::forget('menus');
         return \Response::json(['code' => 0, 'msg' => '删除成功']);
     }
 

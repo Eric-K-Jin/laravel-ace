@@ -12,7 +12,7 @@ Route::post('logout', 'LoginController@logout');
 Route::get('/', ['as' => 'admin.index', 'uses' => 'DashboardController@index']);
 Route::get('/getMenu', ['as' => 'admin.index', 'uses' => 'DashboardController@getMenu']);
 
-Route::group(['middleware' => ['auth:admin', 'permission', 'auth.admin']], function($router) {
+Route::group(['middleware' => ['xss', 'auth:admin', 'permission', 'auth.admin']], function($router) {
     $router->get('index', ['as' => 'admin.index', 'uses' => 'IndexController@index']);
     $router->post('updatePassword', ['as' => 'admin.update-pwd', 'uses' => 'DashboardController@updatePassword']);
 

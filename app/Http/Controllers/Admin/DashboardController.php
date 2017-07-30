@@ -51,11 +51,11 @@ class DashboardController extends Controller
         $menus = [];
         $permissions = [];
 
-        $table = Permission::where('cid', 0)->orWhere('is_menu', '1')->orderBy('cid')->orderBy('sort')->get();
+//        $table = Permission::where('cid', 0)->orWhere('is_menu', '1')->orderBy('cid')->orderBy('sort')->get();
 //       所有权限配好后使用下面的代码把权限进行缓存，缓存目录在 根目录/storage/framework/cache
-//        $table = \Cache::store('file')->rememberForever('menus', function () {
-//            return Permission::where('cid', 0)->orWhere('is_menu', '1')->orderBy('cid')->orderBy('sort')->get();
-//        });
+        $table = \Cache::store('file')->rememberForever('menus', function () {
+            return Permission::where('cid', 0)->orWhere('is_menu', '1')->orderBy('cid')->orderBy('sort')->get();
+        });
 
         foreach ($table as $row) {
             if (checkPermission($row->name)) {
