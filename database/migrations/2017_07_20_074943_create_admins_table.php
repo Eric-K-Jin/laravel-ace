@@ -20,7 +20,7 @@ class CreateAdminsTable extends Migration
             $table->string('password')->comment('密码');
             $table->string('realname')->comment('真是姓名');
             $table->enum('status', ['0', '1'])->default('1')->comment('状态，1：可用 0：不可用');
-            $table->string('remember_token')->comment('记住token');
+            $table->string('remember_token')->nullable()->comment('记住token');
             $table->timestamps();
         });
     }
